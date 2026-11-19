@@ -1,3 +1,2 @@
 @import 'tailwindcss';
-@source "../../components/src";
 @plugin "@tailwindcss/typography";
