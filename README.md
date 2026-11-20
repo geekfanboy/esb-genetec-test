@@ -1,4 +1,8 @@
-### NOTES
+### Installation
+
+at root 
+`npm install`
+`npm run dev --workspace=demo`
 
 ## Packages/Libraries used
 
