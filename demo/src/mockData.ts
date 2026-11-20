@@ -1,30 +1,30 @@
 // components/src/mockData.ts
 export const ROW_COUNT = 100_000;
-export const COLUMN_COUNT = 10_000;
+export const COLUMN_COUNT = 10;
 
 const FIRST = [
-  'Ava',
-  'Liam',
-  'Noah',
-  'Emma',
-  'Olivia',
+  'Emmanuel',
+  'Isabela',
+  'Rosario',
+  'Thomas',
+  'Patria',
   'Lucas',
   'Mia',
-  'Ethan',
-  'Zoe',
+  'Mike',
+  'Sulley',
   'Karl',
 ];
 const LAST = [
-  'Smith',
-  'Jensen',
-  'Garcia',
-  'Muller',
+  'Bueta',
+  'Villamil',
+  'Guevara',
+  'Simon',
   'Rossi',
   'Nguyen',
   'Silva',
-  'Kowalski',
+  'Wazowski',
   'Berg',
-  'Dubois',
+  'Rodrigo',
 ];
 const STATUS = ['active', 'pending', 'suspended', 'archived'] as const;
 const BASE_DATE = Date.UTC(2020, 0, 1);
@@ -92,16 +92,11 @@ export function getRow(
   return out;
 }
 
-export function getRows(
-  startRow: number,
-  count: number,
-  startCol = 0,
-  colCount = 50,
-) {
+export function getRows(startRow: number, count: number) {
   const end = Math.min(startRow + count, ROW_COUNT);
   const rows: Record<string, Cell>[] = [];
   for (let r = startRow; r < end; r++) {
-    rows.push(getRow(r, startCol, colCount));
+    rows.push(getRow(r));
   }
   return rows;
 }
@@ -112,10 +107,8 @@ const sleep = (ms: number) => new Promise((resolve) => setTimeout(resolve, ms));
 export async function getRowsAsync(
   startRow: number,
   count: number,
-  startCol = 0,
-  colCount = 100,
-  delayMs = 500 + Math.random() * 700,
+  delayMs = 0,
 ) {
   await sleep(delayMs);
-  return getRows(startRow, count, startCol, colCount);
+  return getRows(startRow, count);
 }

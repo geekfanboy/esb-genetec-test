@@ -1,15 +1,16 @@
 import './styles.css';
 
-export { Paginator } from './Paginator';
-export type { PaginatorProps } from './Paginator';
+export { Paginator } from './dataGrid/Paginator';
+export type { PaginatorProps } from './dataGrid/Paginator';
 
-export { DataGrid } from './DataGrid';
+export { DataGrid } from './dataGrid/DataGrid';
 export type {
   DataBlock,
   DataColumn,
   DataGridProps,
   GridRange,
-} from './DataGrid';
+} from './dataGrid/DataGrid';
+export type { DataGridRow } from './dataGrid/dataGridTypes';
 
 export { cn } from './utils';
 
@@ -23,12 +24,18 @@ export {
   DialogTrigger,
 } from './components/ui/dialog';
 
-export { Calendar } from './components/ui/calendar';
 export {
   Popover,
   PopoverTrigger,
   PopoverContent,
 } from './components/ui/popover';
 
-export { EventForm } from './EventForm';
-export type { EventFormProps } from './EventForm';
+export { Toast, Toaster, toast } from './components/ui/toast';
+
+export { EventForm } from './timeline/EventForm';
+export type { EventFormProps } from './timeline/EventForm';
+
+export { Timeline } from './timeline/Timeline';
+export { TimelineEventType } from './timeline/Timeline';
+export { TIMELINE_EVENT_TYPE_COLORS } from './timeline/timelineEventTypes';
+export type { TimelineEvent, TimelineProps } from './timeline/Timeline';
